@@ -1,3 +1,4 @@
+```yaml
 name: Terraform Plan - Feature Branch
 
 on:
@@ -8,6 +9,9 @@ on:
   pull_request:
     branches:
       - main
+
+permissions:
+  contents: read
 
 jobs:
   terraform-plan:
@@ -20,37 +24,35 @@ jobs:
 
     steps:
 
-      # 1. Checkout repository
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # 2. Setup Terraform
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: 1.15.8
 
-      # 3. Azure Login
       - name: Azure Login
         uses: azure/login@v2
         with:
-          client-id: "b2c56798-cc0c-4ae0-9139-6a71304a2019"
-          tenant-id: "64afc091-f886-483d-a737-99f0da3d98bf"
-          subscription-id: "ee3926e1-167f-413f-8e1d-88e56fabc2be"
-          client-secret: "lJa8Q~5oiRwYOP.jOf5l350YRbLVGlJ3ZV1oaaIJRE"
+          auth-type: SERVICE_PRINCIPAL
+          creds: |
+            {
+              "clientId": "${{ secrets.AZURE_CLIENT_ID }}",
+              "clientSecret": "${{ secrets.AZURE_CLIENT_SECRET }}",
+              "subscriptionId": "${{ secrets.AZURE_SUBSCRIPTION_ID }}",
+              "tenantId": "${{ secrets.AZURE_TENANT_ID }}"
+            }
 
-      # 4. Terraform Init
       - name: Terraform Init
         run: terraform init
 
-      # 5. Terraform Format Check
       - name: Terraform Format Check
         run: terraform fmt -check -recursive
 
-      # 6. Terraform Validate
       - name: Terraform Validate
         run: terraform validate
 
-      # 7. Terraform Plan
       - name: Terraform Plan
         run: terraform plan
+```
