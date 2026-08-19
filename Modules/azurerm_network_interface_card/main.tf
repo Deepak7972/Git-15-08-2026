@@ -26,6 +26,8 @@ resource "azurerm_linux_virtual_machine" "vm1" {
   custom_data = filebase64("${path.module}/cloud-init.yaml")
 
   disable_password_authentication = false
+  admin_username                  = admin_username
+  admin_password                  = admin_password
 
 
   os_disk {
