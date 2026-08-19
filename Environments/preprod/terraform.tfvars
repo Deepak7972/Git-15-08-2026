@@ -50,5 +50,6 @@ network_interface_card = {
     vm_name        = "vm1"
     size           = "Standard_D4_v5"
     admin_username = "adminuser"
+    admin_password = "adminpassword@123"
   }
 }
