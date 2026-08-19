@@ -26,9 +26,3 @@ module "network_interface" {
   network_interface_card = var.network_interface_card
   depends_on             = [module.resource_group]
 }
-
-module "virtual_machine" {
-  source                 = "../../Modules/azurerm_network_interface_card"
-  network_interface_card = var.network_interface_card
-  depends_on             = [module.resource_group]
-}
