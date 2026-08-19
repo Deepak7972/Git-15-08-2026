@@ -24,5 +24,5 @@ module "public_ip" {
 module "network_interface" {
   source                 = "../../Modules/azurerm_network_interface_card"
   network_interface_card = var.network_interface_card
-  depends_on             = [module.resource_group]
+  depends_on             = [module.resource_group, module.subnet, module.public_ip]
 }
