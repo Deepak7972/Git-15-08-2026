@@ -101,18 +101,4 @@ jobs:
         run: terraform apply -auto-approve
 
 
-        #cloud-config
-
-package_update: true
-package_upgrade: false
-
-packages:
-  - nginx
-  - curl
-
-runcmd:
-  - systemctl enable nginx
-  - systemctl start nginx
-  - rm -f /var/www/html/index.nginx-debian.html
-  - chown -R www-data:www-data /var/www/html
-  - chmod -R 755 /var/www/html
+ 
