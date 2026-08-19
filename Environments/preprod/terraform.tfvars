@@ -1,17 +1,17 @@
 resource = {
   rg1 = {
     name     = "testrg1"
-    location = "eastus"
+    location = "eastus2"
   }
   rg2 = {
     name     = "testrg2"
-    location = "eastus"
+    location = "eastus2"
   }
 }
 virtual_network = {
   vnet1 = {
     name                = "vnet"
-    location            = "eastus"
+    location            = "eastus2"
     resource_group_name = "rg1"
     address_space       = ["10.0.0.0/16"]
   }
@@ -29,7 +29,7 @@ subnet = {
 public_ip = {
   pip1 = {
     name                = "pip1"
-    location            = "eastus"
+    location            = "eastus2"
     resource_group_name = "rg1"
     allocation_method   = "Static"
   }
@@ -38,7 +38,7 @@ public_ip = {
 network_interface_card = {
   nic1 = {
     name                = "nic1"
-    location            = "eastus"
+    location            = "eastus2"
     resource_group_name = "rg1"
 
     ip_config_name = "ipconfig1"
