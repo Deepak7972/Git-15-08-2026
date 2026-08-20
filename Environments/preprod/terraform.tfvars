@@ -5,7 +5,7 @@ resource = {
   }
   # rg2 = {
   #   name     = "testrg2"
-  #   location = "eastus2"
+  #   location = "eastus"
   # }
 }
 
