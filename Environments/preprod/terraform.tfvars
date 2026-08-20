@@ -8,6 +8,7 @@ resource = {
   #   location = "eastus"
   # }
 }
+
 virtual_network = {
   vnet1 = {
     name                = "vnet"
