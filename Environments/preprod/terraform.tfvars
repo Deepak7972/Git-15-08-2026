@@ -3,10 +3,10 @@ resource = {
     name     = "testrg1"
     location = "eastus"
   }
-  rg2 = {
-    name     = "testrg2"
-    location = "eastus"
-  }
+  # rg2 = {
+  #   name     = "testrg2"
+  #   location = "eastus"
+  # }
 }
 virtual_network = {
   vnet1 = {
