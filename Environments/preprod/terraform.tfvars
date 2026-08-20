@@ -49,7 +49,7 @@ network_interface_card = {
     pip_name             = "pip1"
 
     vm_name        = "vm1"
-    size           = "DC1ds_v3"
+    size           = "tandard_D4as_v5"
     admin_username = "adminuser"
     admin_password = "adminpassword@123"
   }
